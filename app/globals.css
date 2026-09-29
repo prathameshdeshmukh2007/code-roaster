@@ -1,0 +1,148 @@
+@import "tailwindcss";
+
+@theme {
+  /* Folk Tech Neo-Brutalist Color Tokens (DevFest Nashik 2026 Wireframe) */
+  --color-cream: #F8F4EC;
+  --color-ink: #141414;
+  --color-mustard: #EDB13E;
+  --color-pale-yellow: #F7E3A8;
+  --color-lavender: #EFF2FB;
+
+  /* Google Brand Quad Accents */
+  --color-g-blue: #4C80F0;
+  --color-g-red: #D9503F;
+  --color-g-green: #4FA35A;
+  --color-g-yellow: #FBBC04;
+
+  /* Dark Editor Canvas */
+  --color-editor-bg: #161616;
+  --color-editor-surface: #1F1F1F;
+  --color-editor-text: #E5E9F0;
+
+  /* Typography */
+  --font-display: var(--font-space-grotesk), "Arial", sans-serif;
+  --font-mono: var(--font-jetbrains-mono), "Courier New", monospace;
+}
+
+/* Base reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #F8F4EC;
+  color: #141414;
+  font-family: var(--font-display), sans-serif;
+}
+
+/* Folk Dot Grid Background Texture */
+.bg-folk-grid {
+  background-color: #F8F4EC;
+  background-image:
+    radial-gradient(#141414 0.75px, transparent 0.75px),
+    radial-gradient(#EDB13E 0.75px, #F8F4EC 0.75px);
+  background-size: 24px 24px;
+  background-position: 0 0, 12px 12px;
+}
+
+/* Neo-Brutalist Hard Drop Shadows */
+.neo-shadow {
+  box-shadow: 4px 4px 0px #141414;
+}
+.neo-shadow-sm {
+  box-shadow: 2px 2px 0px #141414;
+}
+.neo-shadow-lg {
+  box-shadow: 6px 6px 0px #141414;
+}
+
+/* Pill Button Neo-Brutalist Interaction */
+.btn-pill {
+  border: 2px solid #141414;
+  border-radius: 9999px;
+  box-shadow: 4px 4px 0px #141414;
+  transition: all 0.15s ease;
+}
+.btn-pill:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0px #141414;
+}
+.btn-pill:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px #141414;
+}
+
+/* Dark Editor Custom Scrollbar */
+.editor-scroll::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.editor-scroll::-webkit-scrollbar-track {
+  background: #161616;
+}
+.editor-scroll::-webkit-scrollbar-thumb {
+  background: #333333;
+  border-radius: 3px;
+}
+.editor-scroll::-webkit-scrollbar-thumb:hover {
+  background: #555555;
+}
+
+/* Custom Page Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F8F4EC;
+}
+::-webkit-scrollbar-thumb {
+  background: #141414;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #EDB13E;
+}
+
+/* Monospaced Labels */
+.label-mono {
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #66625B;
+}
+
+.label-meta {
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* Rubber Stamp Styling for Roast Score */
+.stamp-badge {
+  transform: rotate(-2deg);
+  transition: transform 0.2s ease;
+}
+.stamp-badge:hover {
+  transform: rotate(0deg) scale(1.02);
+}
+
+/* Animations */
+@keyframes pulseFade {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.45; }
+}
+.animate-pulse-slow {
+  animation: pulseFade 1.6s ease-in-out infinite;
+}
