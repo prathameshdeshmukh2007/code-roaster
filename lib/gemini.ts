@@ -21,7 +21,7 @@ export async function analyzeCode(request: RoastRequest): Promise<RoastResult> {
   const apiKey = rawKey.replace(/\\+$/, "").trim();
   if (!apiKey) {
     throw new Error(
-      "GEMINI_API_KEY is missing. Copy .env.example to .env.local, add your key, and restart the server."
+      "GEMINI_API_KEY is missing. For local dev, add it to .env.local. For Vercel, add GEMINI_API_KEY under Project Settings > Environment Variables, then redeploy."
     );
   }
 
